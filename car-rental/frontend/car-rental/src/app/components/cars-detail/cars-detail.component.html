@@ -1,0 +1,31 @@
+<div class="detail-section">
+  <div class="container-fluid">
+
+    <img src="{{ car.imageUrl }} " class="detil-img" >
+    <h3>{{ car.make }}</h3>
+    <h2>{{ car.model }}</h2>
+    <div class="price">
+      {{ car.price | currency:'EUR' }}/day
+    </div>
+    <a routerLink="/reserve/{{car.id}}">
+      <button class="btn btn-primary btn-sm">Make a reservation</button>
+    </a>
+    <hr>
+    <h4>
+      Description
+    </h4>
+    <p> Plate : {{ car.plate }}</p>
+    <p> Capacity : {{ car.capacity }}</p>
+    <p> Engine : {{ car.engine }}</p>
+    <p> Year : {{ car.year }}</p>
+    <ng-container *ngIf="car.status; else elseTemplate">
+      <p>Status : Available</p>
+    </ng-container>
+    <ng-template #elseTemplate>
+      Status : Not Available
+    </ng-template>
+
+
+  </div>
+  <a routerLink="/category/{{categoryId}}" class="mt-5">Back to Product List</a>
+</div>

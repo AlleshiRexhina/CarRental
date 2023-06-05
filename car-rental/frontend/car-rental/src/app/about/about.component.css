@@ -1,0 +1,10 @@
+.container {
+  text-align: left;
+  padding: 0 5px;
+  max-width: 800px;
+}
+
+.about-content {
+  color: #F9F6EE;
+  line-height: 1.5;
+}
